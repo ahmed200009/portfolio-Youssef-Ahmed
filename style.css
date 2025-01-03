@@ -1,0 +1,236 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none; /* For Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+  
+  .ibm-plex-mono-semibold {
+    font-family: 'IBM Plex Mono', serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .ibm-plex-mono-bold {
+    font-family: 'IBM Plex Mono', serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .ibm-plex-mono-thin-italic {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .ibm-plex-mono-extralight-italic {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+
+body { 
+    background: linear-gradient(45deg, #b45858, #076d9c);
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    
+}
+
+/* Background Gradient */
+.background {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+/* Header Image */
+.header-image {
+    background-image: url('./videos/pexels-seej-nguyen-249333-755416.jpg');
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content Section */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.name {
+    font-size: 60px;
+    color: #ffffff;
+    animation: fadeInUp 3.5s ease-out;
+    transition: opacity 1.25s, transform 10.25s;
+    font-family: 'IBM Plex Mono', serif;
+    letter-spacing: 3px; 
+}
+
+.job-title {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'IBM Plex Mono', serif;
+    margin-bottom: 111x;
+    font-weight: bold;
+    animation: fadeInUp 3.5s ease-out;
+    transition: transform 1.25s;
+    margin-bottom: 300px;
+}
+
+/* Portfolio Button */
+.portfolio-btn {
+    
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 25px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portfolio-btn:hover {
+    background-color: #FEB47B;
+}
+
+
+/* Works Section */
+.works-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.video-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 200px;
+    margin: 10px 10px;
+    border-radius: 20px;
+    padding: 2px;
+    transition: transform 0.3s;
+}
+
+.video-container:hover {
+    transform: scale(1.05);
+}
+
+
+.video {
+    width: 110%;
+    height: 130%;
+    border-radius: 10px;
+    animation: fadeInUp 0.9s ease-in;
+}
+h3 {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif; /* خط بسيط وحديث */
+    font-size: 18px; /* حجم مناسب للقراءة */
+    color: #333; /* لون النص الأساسي */
+    line-height: 1.6; /* تباعد بين الأسطر لسهولة القراءة */
+    text-align: center; /* توسيط النص */
+    background-color: rgba(255, 126, 95, 0.1); /* خلفية شفافة بلون مميز */
+    border: 2px solid #FF7E5F; /* إطار بلون دافئ */
+    border-radius: 10px; /* زوايا دائرية */
+    padding: 20px; /* مسافة داخلية حول النص */
+    margin: 20px auto; /* مسافة خارجية وتوسيط العنصر */
+    max-width: 600px; /* عرض مناسب للحاوية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* تأثير ظل خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h3:hover {
+    transform: scale(1.05); /* تكبير النص عند التمرير */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+/* About Section */
+.about-section {
+    display: flex;
+    text-align: left;
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-text {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 19px;
+    color: #00ffff;
+    
+    
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #1E90FF;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Scroll Button */
+.portfolio-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #232526;
+    text-align: center;
+    color: white;
+}
+

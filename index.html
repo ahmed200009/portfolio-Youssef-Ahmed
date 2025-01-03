@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="header-image"></div>
+        <div class="content">
+            <h1 class="name">Youssef Ahmed</h1>
+            <p class="job-title">Professional Voice, Unmatched Quality</p>
+            <button class="portfolio-btn" onclick="scrollToWorks()">View Works</button>
+        </div>
+    </div>
+    <div class="works-section" id="works">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <video class="video" controls>
+                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
+                </video>
+                <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.
+            </div>
+            <div class="mySlides fade">
+                <video class="video" controls>
+                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
+                </video>
+                <h3>Video 2 Title</h3>
+            </div>
+            <div class="mySlides fade">
+                <video class="video" controls>
+                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
+                </video>
+                <h3>Video 3 Title</h3>
+            </div>
+            <div class="mySlides fade">
+                <video class="video" controls>
+                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
+                </video>
+                <h3>Video 4 Title</h3>
+            </div>
+            <div class="mySlides fade">
+                <video class="video" controls>
+                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
+                </video>
+                <h3>Video 5 Title</h3>
+            </div>
+            <div class="mySlides fade">
+                <video class="video" controls>
+                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
+                </video>
+                <h3>Video 6 Title</h3>
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top:1000PX;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .next {
+            right: 0;
+            margin-left: 10px;
+            border-radius: 3px 0 0 3px;
+            
+        }
+        .prev{
+            left: 0
+            
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+    </style>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+    <br>
+    <br>
+    <br> <br>
+    <div class="about-section">
+        <div class="about-image">
+            <img src="./videos/pexels-cottonbro-6892711.jpg" alt="About Image">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Voice-over is a powerful art that brings stories to life, adds emotion to messages, and connects audiences with content on a deeper level. As a voice-over artist, I specialize in crafting engaging and impactful performances tailored to a wide range of projects.....</p>
+        </div>
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <form action="mailto:youssef03171717@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <style>
+            .contact-section {
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                margin-top: 20px;
+            }
+
+            .contact-section h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .contact-section form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-section label {
+                font-weight: bold;
+            }
+
+            .contact-section input, .contact-section textarea {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .contact-section button {
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .contact-section button:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" class="social-icon"><img src="./videos/facebook.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com" class="social-icon"><img src="./videos/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com" class="social-icon"><img src="./videos/instagram.png" alt="Instagram"></a>
+            <a href="https://www.whatsapp.com" class="social-icon"><img src="./videos/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.email.com" class="social-icon"><img src="./videos/envelope.png" alt="WhatsApp"></a>
+        </div>
+        <style>
+            .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0;
+            }
+
+            .social-icon img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+            }
+
+            .social-icon img:hover {
+            transform: scale(1.1);
+            }
+        </style>
+        <div style="text-align: left; font-family: 'Cursive'; margin-left: 20px;">
+            <span style="color: white; font-size: 24px;">By Youssef</span>
+        </div>
+        <div style="text-align: center; font-family: 'Cursive'; margin-top: 10px;">
+            <span style="color: white; font-size: 18px;">&copy; 2023 Youssef Ahmed. All rights reserved.</span>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
