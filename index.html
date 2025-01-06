@@ -3,66 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    
+    <title>Portfolio 11</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="./videos/logo.ico" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="background">
-        <div class="header-image"></div>
-        <div class="content">
-            <h1 class="name">Youssef Ahmed</h1>
-            <p class="job-title">Professional Voice, Unmatched Quality</p>
-            <button class="portfolio-btn" onclick="scrollToWorks()">View Works</button>
-        </div>
-    </div>
-    <div class="works-section" id="works">
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <video class="video" controls>
-                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
-                </video>
-                <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.
-            </div>
-            <div class="mySlides fade">
-                <video class="video" controls>
-                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
-                </video>
-                <h3>Video 2 Title</h3>
-            </div>
-            <div class="mySlides fade">
-                <video class="video" controls>
-                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
-                </video>
-                <h3>Video 3 Title</h3>
-            </div>
-            <div class="mySlides fade">
-                <video class="video" controls>
-                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
-                </video>
-                <h3>Video 4 Title</h3>
-            </div>
-            <div class="mySlides fade">
-                <video class="video" controls>
-                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
-                </video>
-                <h3>Video 5 Title</h3>
-            </div>
-            <div class="mySlides fade">
-                <video class="video" controls>
-                    <source src="./videos/MR.Beast.mp4" type="video/mp4">
-                </video>
-                <h3>Video 6 Title</h3>
-            </div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
     <style>
-        .slideshow-container {
+     
+     html {
+    zoom: 1.1; /* تكبير الصفحة بنسبة 10% */
+}   /* General styles */
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none; /* For Firefox */
+}
+
+*::-webkit-scrollbar {
+    display: none; 
+}
+
+  
+  .ibm-plex-mono-semibold {
+    font-family: 'IBM Plex Mono', serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .ibm-plex-mono-bold {
+    font-family: 'IBM Plex Mono', serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .ibm-plex-mono-thin-italic {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .ibm-plex-mono-extralight-italic {
+    font-family: "IBM Plex Mono", serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+
+body { 
+    background: linear-gradient(45deg, #b45858, #076d9c);
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    
+}
+
+/* Background Gradient */
+.background {
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+/* Header Image */
+.header-image {
+    background-image: url('./videos/pexels-seej-nguyen-249333-755416.jpg');
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content Section */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.name {
+    font-size: 60px;
+    color: #ffffff;
+    animation: fadeInUp 3.5s ease-out;
+    transition: opacity 1.25s, transform 10.25s;
+    font-family: 'IBM Plex Mono', serif;
+    letter-spacing: 3px; 
+}
+
+.job-title {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'IBM Plex Mono', serif;
+    margin-bottom: 111x;
+    font-weight: bold;
+    animation: fadeInUp 3.5s ease-out;
+    transition: transform 1.25s;
+    margin-bottom: 300px;
+}
+
+/* Portfolio Button */
+.portfolio-btn {
+    
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    padding: 25px 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portfolio-btn:hover {
+    background-color: #FEB47B;
+}
+
+
+/* Works Section */
+.works-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.video-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 200px;
+    margin: 10px 10px;
+    border-radius: 20px;
+    padding: 2px;
+    transition: transform 0.3s;
+}
+
+.video-container:hover {
+    transform: scale(1.05);
+}
+
+
+.video {
+    animation: fadeInUp 0.9s ease-in;
+}
+h3 {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif; /* خط بسيط وحديث */
+    font-size: 18px; /* حجم مناسب للقراءة */
+    color: #333; /* لون النص الأساسي */
+    line-height: 1.6; /* تباعد بين الأسطر لسهولة القراءة */
+    text-align: center; /* توسيط النص */
+    background-color: rgba(255, 126, 95, 0.1); /* خلفية شفافة بلون مميز */
+    border: 2px solid #FF7E5F; /* إطار بلون دافئ */
+    border-radius: 10px; /* زوايا دائرية */
+    padding: 20px; /* مسافة داخلية حول النص */
+    margin: 20px auto; /* مسافة خارجية وتوسيط العنصر */
+    max-width: 600px; /* عرض مناسب للحاوية */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* تأثير ظل خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+h3:hover {
+    transform: scale(1.05); /* تكبير النص عند التمرير */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+}
+/* About Section */
+.about-section {
+    display: flex;
+    text-align: left;
+    margin: 50px 0;
+    padding: 0 20px;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-text {
+    max-width: 600px;
+    margin: 20px;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 19px;
+    color: #ffffff;
+    
+    
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #1E90FF;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Scroll Button */
+.portfolio-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background-color: #232526;
+    text-align: center;
+    color: white;
+}
+
+.slideshow-container {
             position: relative;
             max-width: 800px;
             margin: auto;
@@ -102,56 +287,7 @@
             background-color: rgb(255, 255, 255);
             color: black;
         }
-    </style>
-
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-        }
-    </script>
-    <br>
-    <br>
-    <br> <br>
-    <div class="about-section">
-        <div class="about-image">
-            <img src="./videos/pexels-cottonbro-6892711.jpg" alt="About Image">
-        </div>
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>Voice-over is a powerful art that brings stories to life, adds emotion to messages, and connects audiences with content on a deeper level. As a voice-over artist, I specialize in crafting engaging and impactful performances tailored to a wide range of projects.....</p>
-        </div>
-        <div class="contact-section">
-            <h2>Contact Me</h2>
-            <form action="mailto:youssef03171717@gmail.com" method="post" enctype="text/plain">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Send</button>
-            </form>
-        </div>
-
-        <style>
-            .contact-section {
+        .contact-section {
                 padding: 20px;
                 background-color: #f9f9f9;
                 border-radius: 8px;
@@ -191,18 +327,7 @@
             .contact-section button:hover {
                 background-color: #45a049;
             }
-        </style>
-    </div>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" class="social-icon"><img src="./videos/facebook.png" alt="Facebook"></a>
-            <a href="https://www.linkedin.com" class="social-icon"><img src="./videos/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com" class="social-icon"><img src="./videos/instagram.png" alt="Instagram"></a>
-            <a href="https://www.whatsapp.com" class="social-icon"><img src="./videos/whatsapp.png" alt="WhatsApp"></a>
-            <a href="https://www.email.com" class="social-icon"><img src="./videos/envelope.png" alt="WhatsApp"></a>
-        </div>
-        <style>
             .social-icons {
             display: flex;
             justify-content: center;
@@ -219,7 +344,123 @@
             .social-icon img:hover {
             transform: scale(1.1);
             }
-        </style>
+
+
+            .whatsapp-btn {
+                    padding: 10px 20px;
+                    background-color: #25D366;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    margin-top: 10px;
+                }
+            
+                .whatsapp-btn:hover {
+                    background-color: #1EBEA5;
+                }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="header-image"></div>
+        <div class="content">
+            <h1 class="name">Youssef Ahmed</h1>
+            <p class="job-title">Professional Voice, Unmatched Quality</p>
+            <button class="portfolio-btn" onclick="scrollToWorks()">View Works</button>
+        </div>
+    </div>
+    <div class="works-section" id="works">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="video">
+                <iframe class="Video" src="https://drive.google.com/file/d/1xEn9FZ6JegIemNXcJ7LV3k8O7cj6v8lR/preview" width="940" height="480" style="border-radius: 10px;">
+                </iframe>
+                    <!-- <h3>Experience the art of professional dubbing and voice-over, transforming MrBeast's ico</div>nic videos into captivating Arabic content. Enjoy unparalleled vocal performance and high-quality production.</h3> -->
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="video">
+                <iframe class="Video" src="https://drive.google.com/file/d/1OCR4fYUzrXiMctVIMD5g3h6SakZPlhzh/preview" width="940" height="480" style="border-radius: 10px;">
+                </iframe>
+                    <!-- <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.</h3> -->
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="video">
+                <iframe class="Video" src="https://drive.google.com/file/d/1w0tO4MWk8_SF57UjG4lBsyPrMOjrQgWc/preview" width="940" height="480" style="border-radius: 10px;">
+                </iframe>
+                    <!-- <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.</h3> -->
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="video">
+                <iframe class="Video" src="https://drive.google.com/file/d/1lMsHl52qijMnXba5b_8ZIQmElZiybzMb/preview" width="940" height="480" style="border-radius: 10px;">
+                </iframe>
+                    <!-- <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.</h3> -->
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="video">
+                <iframe class="Video" src="https://drive.google.com/file/d/1W_3j9hjV-UliomuAGf-fAfR8lZoos_Xw/preview" width="940" height="480" style="border-radius: 10px;">
+                </iframe>
+                    <!-- <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.</h3> -->
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <div class="video">
+                <iframe class="Video" src="https://www.youtube.com/embed/WGgLUP06wdM?start=0" width="940" height="480" style="border-radius: 10px;" allowfullscreen></iframe>
+                </iframe>
+                    <!-- <h3>Professional dubbing and voice-over bringing one of MrBeast's iconic videos to life in a fresh and unique way! Enjoy high-quality Arabic content with captivating vocal performance.</h3>              -->
+                </div>
+            </div>
+
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <br>
+    <br>
+    <br> <br>
+    <div class="about-section">
+        <div class="about-image">
+            <img src="./videos/pexels-cottonbro-6892711.jpg" alt="About Image">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hello, I’m Youssef Ahmed, a professional voice-over artist with a strong and versatile voice capable of delivering a wide range of styles. I have experience in providing voice-overs for advertisements, explainer videos, storytelling, and documentary content. I always strive to convey messages in a manner that resonates with the target audience, utilizing my skills in tone control, emotion, and delivery to make the content more impactful. My commitment to quality and attention to detail ensure that I deliver voice recordings that meet and exceed expectations. If you’re looking for a voice that brings life and persuasion to your project, I’m here to help..</p>
+            <button class="whatsapp-btn" onclick="window.open('https://wa.me/201060572025', '_blank')">Contact Me on WhatsApp</button>
+
+        </div>
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <form action="mailto:youssef03171717@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" class="social-icon" target="_blank"><img src="./videos/facebook.png" alt="Facebook"></a>
+            <a href="https://www.linkedin.com" class="social-icon" target="_blank"><img src="./videos/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com" class="social-icon" target="_blank"><img src="./videos/instagram.png" alt="Instagram"></a>
+            <a href="https://wa.me/201060572025" class="social-icon" target="_blank"><img src="./videos/whatsapp.png" alt="WhatsApp"></a>
+            <!-- <a href="https://www.email.com" class="social-icon" target="_blank"><img src="./videos/envelope.png" alt="Email"></a> -->
+        </div>
+
         <div style="text-align: left; font-family: 'Cursive'; margin-left: 20px;">
             <span style="color: white; font-size: 24px;">By Youssef</span>
         </div>
@@ -228,6 +469,33 @@
         </div>
     </footer>
     
-    <script src="script.js"></script>
+    <script >
+        // Function to scroll to the works section
+    function scrollToWorks() {
+    const worksSection = document.getElementById('works');
+    window.scrollTo({
+        top: worksSection.offsetTop,
+        behavior: 'smooth'
+    });
+}
+
+    let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
 </body>
 </html>
